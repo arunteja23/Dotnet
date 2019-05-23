@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.ComponentModel.DataAnnotations;
+
+namespace WebApplication1.Models
+{
+    public class Employ
+    {
+        [Key]
+        [Required(ErrorMessage ="Please enter Employ No")]
+        public int Empno { get; set; }
+       
+        [MinLength(5,ErrorMessage ="Minimum 5 chars ")]
+        [MaxLength(12,ErrorMessage ="Maximum 12 chars ")]
+        [Required(ErrorMessage ="please enter employ name")]
+        public string Name { get; set; }
+
+        [MaxLength(10, ErrorMessage = "Maximum 10 chars ")]
+        [Required(ErrorMessage ="please enter dept name")]
+        public string Dept { set; get; }
+
+        [MinLength(3, ErrorMessage = "Minimum 3 chars ")]
+        [MaxLength(10, ErrorMessage = "Maximum 10 chars ")]
+        [Required(ErrorMessage ="please enter dept name")]
+
+        public string Desig { set; get; }
+
+      [Required(ErrorMessage ="please enter salary")]
+      [RegularExpression(@"\d{5)$",ErrorMessage ="only 5 digits are allowed")]
+
+        public int Basic { get; set; }
+       
+    }
+}
